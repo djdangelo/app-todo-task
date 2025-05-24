@@ -2,7 +2,6 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { LayoutService } from "./service/app.layout.service";
 import { globalApp } from '../data/constants/global.variable.constant';
-import {AuthService} from "../core/services/auth/auth.service";
 
 @Component({
     selector: 'app-topbar',
@@ -22,15 +21,15 @@ export class AppTopBarComponent {
 
     searchActive: boolean = false;
 
-    constructor(public layoutService: LayoutService, private authService: AuthService) {}
+    constructor(public layoutService: LayoutService, /*private authService: AuthService*/) {}
 
     onMenuButtonClick() {
         this.layoutService.onMenuToggle();
     }
 
-    singOutUser() {
-      this.authService.singOut();
-    }
+    // singOutUser() {
+    //   this.authService.singOut();
+    // }
 
     activateSearch() {
         this.searchActive = true;
