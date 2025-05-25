@@ -24,7 +24,7 @@ export class ValidRequestInterceptor implements HttpInterceptor {
     this.token = localStorage.getItem(globalApp.tokenKey) || '';
     if (this.token !== '') {
       const header = new HttpHeaders({
-        'Authorization': `Bearer ${ this.token }`
+        'Authorization': `${ this.token }`
       });
       const cloneReq = req.clone({
         headers: header

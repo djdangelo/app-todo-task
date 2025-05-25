@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ModulesRoutingModule } from './modules-routing.module';
 import {AppLayoutModule} from "../layout/app.layout.module";
@@ -9,7 +8,7 @@ import {AppLayoutModule} from "../layout/app.layout.module";
   declarations: [],
   imports: [
     AppLayoutModule,
-    ModulesRoutingModule
+    ModulesRoutingModule,
   ]
 })
 export class ModulesModule { }

@@ -1,0 +1,24 @@
+<div class="col-12">
+  <p-messages [(value)]="messages" [enableService]="false" />
+</div>
+<div class="card">
+  <span class="text-900 text-xl font-bold mb-4 block">Formulario usuarios</span>
+  <div class="grid">
+    <div class="col-12 lg:col-2">
+      <div class="text-900 font-medium text-xl mb-3">Usuario</div>
+      <p class="m-0 p-0 text-600 line-height-3 mr-3">Formulario para: {{action[index]}}</p>
+    </div>
+    <form [formGroup]="formUser" class="col-12 lg:col-10">
+      <div class="grid formgrid p-fluid">
+        <div class="field mb-4 col-12">
+          <label for="email" class="font-medium text-900">Correo electronico</label>
+          <input id="email" formControlName="email" type="email" pInputText>
+        </div>
+        <div class="col-12">
+          <button [disabled]='formUser.invalid || btnSave' pButton pRipple (click)="saveUser(formUser.value)" label="GUARDAR" class="w-auto mt-3"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

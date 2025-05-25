@@ -7,6 +7,7 @@ const routes: Routes = [
   children: [
     { path: '', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
     { path: 'tasks', data: { breadcrumb: 'todo-tasks'}, loadChildren: () => import('./todo-task/todo-task.module').then(m => m.TodoTaskModule) },
+    { path: 'users', data: { breadcrumb: 'Usuarios' }, loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
   ]},
 ];
 

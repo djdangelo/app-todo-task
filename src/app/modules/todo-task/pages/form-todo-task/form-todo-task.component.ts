@@ -22,7 +22,6 @@ export class FormTodoTaskComponent {
   index: number = 0;
 
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
   ) {

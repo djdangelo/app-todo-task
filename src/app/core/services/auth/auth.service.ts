@@ -14,6 +14,7 @@ export class AuthService {
   singOut() {
     localStorage.removeItem(globalApp.tokenKey);
     localStorage.removeItem('userName');
+    localStorage.removeItem('userEmail');
     this.routes.navigate(['/auth']);
   }
   validateToken(token: string) : boolean {

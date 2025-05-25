@@ -6,7 +6,7 @@ import {globalApp} from "../../../data/constants/global.variable.constant";
 @Injectable({
   providedIn: 'root'
 })
-export class AuthUserGuard implements CanActivate {
+export class RedirectHomeGuard implements CanActivate {
   token = '';
   constructor(
     private authService: AuthService,
@@ -17,12 +17,11 @@ export class AuthUserGuard implements CanActivate {
     this.token = localStorage.getItem(globalApp.tokenKey) || '';
     if (this.token !== null || this.token !== '') {
       if (this.authService.validateToken(this.token)) {
-        //this.router.navigate(['/core']);
-        return true;
+        this.router.navigate(['/core']);
+        return false;
       }
     }
-    this.router.navigate(['/auth']);
-    return false;
+    return true;
   }
 }
 

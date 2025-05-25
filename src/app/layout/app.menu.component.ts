@@ -27,6 +27,13 @@ export class AppMenuComponent implements OnInit {
               { label: 'Lista de tareas', icon: 'pi pi-bars', routerLink: ['tasks/list-tasks'] },
             ]
           },
+          {
+            label: 'Usuarios', icon: 'pi pi-users',
+            items: [
+              { label: 'Lista de usuarios', icon: 'pi pi-users', routerLink: ['users/list-user'] },
+              { label: 'Nuevo usuario', icon: 'pi pi-user-plus', routerLink: ['users/create-user'] },
+            ]
+          },
         ];
     }
 }
