@@ -19,12 +19,15 @@ import {PipesCustomsModule} from "../../data/pipes/pipes-customs.module";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {InplaceModule} from "primeng/inplace";
 import {MenuModule} from "primeng/menu";
+import {TaskDetailComponent} from "./components/task-detail/task-detail.component";
+import {CheckboxModule} from "primeng/checkbox";
 
 
 @NgModule({
   declarations: [
     FormTodoTaskComponent,
-    ListTodoTaskComponent
+    ListTodoTaskComponent,
+    TaskDetailComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +43,7 @@ import {MenuModule} from "primeng/menu";
     DropdownModule,
     ProgressBarModule,
     ReactiveFormsModule,
-    DialogModule, PipesCustomsModule, InputTextareaModule, InplaceModule, MenuModule,
+    DialogModule, PipesCustomsModule, InputTextareaModule, InplaceModule, MenuModule, CheckboxModule,
   ]
 })
 export class TodoTaskModule { }
