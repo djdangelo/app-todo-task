@@ -25,7 +25,7 @@ export class TasksService {
   delete(id: string): Observable<IResponseApi> {
     return this.http.delete<IResponseApi>(`${globalApp.apiUrl}/task/delete/${id}`);
   }
-  list(limit: number = 10, id: string): Observable<IResponseApi> {
+  list(limit: number = 10, id?: string): Observable<IResponseApi> {
     return this.http.get<IResponseApi>(`${globalApp.apiUrl}/task/get-all?limit=${limit}&pageToken=${id}`);
   }
 }

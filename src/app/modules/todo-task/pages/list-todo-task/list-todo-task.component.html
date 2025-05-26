@@ -6,6 +6,14 @@
     <span class="text-900 text-xl font-semibold">Task List</span>
     <button pButton pRipple class="p-button-outlined font-semibold" icon="pi pi-plus" label="Create Task" (click)="addNewTask()"></button>
   </div>
-<!--  <app-task-list [taskList]="todo" title="ToDo"></app-task-list>-->
-<!--  <app-task-list [taskList]="completed" title="Completed"></app-task-list>-->
+  <app-task-detail [taskList]="sharedService.todoTask" title="ToDo Tasks" [showMessageEmpty]="sharedService.todoTask.length === 0"></app-task-detail>
+  <app-task-detail [taskList]="sharedService.completedTask" title="ToDo Tasks Completed" [showMessageEmpty]="sharedService.completedTask.length === 0"></app-task-detail>
+  <br><br>
+  <hr>
+  <div class="flex align-items-center justify-content-end">
+  <span class="mx-1 text-color">Tasks per page: </span>
+  <p-dropdown [options]="options" optionLabel="label" optionValue="value" [(ngModel)]="rows2" (ngModelChange)="first = 0" />
+  <p-paginator [first]="first" [rows]="rows2" [totalRecords]="sharedService.size" (onPageChange)="onPageChange($event)" [showCurrentPageReport]="true"
+               currentPageReportTemplate="{first} - {last} of {totalRecords}" [showPageLinks]="false" [showFirstLastIcon]="false"></p-paginator>
+</div>
 </div>

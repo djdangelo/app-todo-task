@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {StatusTaskPipe} from "./status-task/status-task.pipe";
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    StatusTaskPipe
+  ],
   imports: [
-    CommonModule
+  ],
+  exports: [
+    StatusTaskPipe
   ]
 })
 export class PipesCustomsModule { }

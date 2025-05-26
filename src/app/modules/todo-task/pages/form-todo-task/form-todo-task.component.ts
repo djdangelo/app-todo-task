@@ -24,6 +24,8 @@ export class FormTodoTaskComponent {
   id: string = '';
   index: number = 0;
 
+  task!: ITask;
+
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
@@ -49,7 +51,8 @@ export class FormTodoTaskComponent {
     })
   }
 
-  saveTask(data: ITask) {
+  saveTask(data: ITask | any) {
+    data.status = data.status.value;
     if (this.index === 0) {
       this.taskService.create(data).subscribe(
         (res: IResponseApi) => {
@@ -68,6 +71,7 @@ export class FormTodoTaskComponent {
     }
     if (this.index === 1) {
       data.id = this.id;
+      data.createdAt = this.task.createdAt;
       this.taskService.update(data).subscribe(
         (res: IResponseApi) => {
           this.messages = [
@@ -90,6 +94,7 @@ export class FormTodoTaskComponent {
       this.index = 1;
       this.taskService.listOne(this.id).subscribe(
         (res: IResponseApi) => {
+          this.task = res.data;
           this.formTask.controls['title'].setValue(res.data.title);
           this.formTask.controls['description'].setValue(res.data.description);
         },

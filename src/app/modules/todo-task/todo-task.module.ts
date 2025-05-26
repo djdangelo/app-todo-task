@@ -21,6 +21,8 @@ import {InplaceModule} from "primeng/inplace";
 import {MenuModule} from "primeng/menu";
 import {TaskDetailComponent} from "./components/task-detail/task-detail.component";
 import {CheckboxModule} from "primeng/checkbox";
+import {PaginatorModule} from "primeng/paginator";
+import {DividerModule} from "primeng/divider";
 
 
 @NgModule({
@@ -43,7 +45,7 @@ import {CheckboxModule} from "primeng/checkbox";
     DropdownModule,
     ProgressBarModule,
     ReactiveFormsModule,
-    DialogModule, PipesCustomsModule, InputTextareaModule, InplaceModule, MenuModule, CheckboxModule,
+    DialogModule, PipesCustomsModule, InputTextareaModule, InplaceModule, MenuModule, CheckboxModule, PaginatorModule, DividerModule,
   ]
 })
 export class TodoTaskModule { }
